@@ -1,11 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import styles from "./cart.module.css";
+import { NavLink } from "react-router-dom";
+import styles from "./cart-link.module.css";
 
 export function CartLink() {
   return (
-    <Link to="/cart" className={styles.link}>
+    <NavLink to="/cart" className={styles.link}>
       <span className={styles.text}>🛒&nbsp;&nbsp;Cart</span>
-    </Link>
+    </NavLink>
   );
 }
