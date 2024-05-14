@@ -1,3 +1,7 @@
+:global .page {
+  text-align: center;
+}
+
 .table {
   width: 600px;
   background-color: #f1f1f1;
