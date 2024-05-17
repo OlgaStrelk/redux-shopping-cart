@@ -2,17 +2,19 @@ import React, { useEffect, useState } from "react";
 import { getProducts, Product } from "../../app/api";
 import styles from "./products.module.css";
 import Header from "../header/header";
-import { useAppSelector } from "../../app/hooks";
+import { useAppSelector, useAppDispatch } from "../../app/hooks";
+import { receivedProducts } from "./productsSlice";
 
 export function Products() {
+  const dispatch = useAppDispatch();
   // const [products, setProducts] = useState<Product[]>([]);
-  // useEffect(() => {
-  //   getProducts().then((products) => {
-  //     setProducts(products);
-  //   });
-  // }, []);
+  useEffect(() => {
+    getProducts().then((products) => {
+      dispatch(receivedProducts(products));
+    });
+  }, []);
 
-  const products =useAppSelector(state=>state.products.products)
+  const products = useAppSelector((state) => state.products.products);
   return (
     <>
       <main className="page">
