@@ -15,10 +15,7 @@ const productsSlice = createSlice({
       let products = action.payload;
       products.forEach((product) => {
         state.products[product.id] = product;
-        console.log(product)
-
       });
-
 
       // products.forEach(product=>state.products[products.id] = product)
     },
